@@ -2,7 +2,7 @@
 
 namespace Cats
 {
-    public class Cat
+    public abstract class Cat
     {
         public bool Tired { get; set; } = false;
         public bool Hungry { get; set; } = false;
@@ -14,7 +14,10 @@ namespace Cats
             Weight = weight;
         }
 
-        // On this line, add a no-argument constructor
+        public Cat()
+        {
+            Weight = 13.0;
+        }
 
         public void Sleep()
         {
@@ -32,10 +35,6 @@ namespace Cats
             Hungry = false;
         }
 
-        public virtual string Noise()
-        {
-            return "Meow!";
-        }
-
+        public abstract string Noise();
     }
 }
